@@ -186,7 +186,7 @@ public class main extends javax.swing.JFrame {
 
         jTabbedPane.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        codeArea1.setText("grupo ( nombre , capacidad , carreras );\nmaestro ( nombre , horas_trabajadas , entrada , salida );\naula ( Nombre , cap );\nrecurso ( nombre , cant , movl );\nmateria ( nombre , carrera );\nasignarRecurso ( nombre , materia );\nasignarGrupo ( nombreGrupo , nombreMateria );\nasignarAula ( nombreAula , nombreGrupo );\nasignarMaestro ( nombreMaestro , nombreGrupo );\nasignarHora ( nombreGrupo , hora );");
+        codeArea1.setText("grupo ( nombre , 30 , carreras );\nmaestro ( nombre , 1 , 23 , 1 );\naula ( Nombre , 32 );\nrecurso ( nombre , 1 , si );\nmateria ( nombre , carrera );\nasignarRecurso ( nombre , materia );\nasignarGrupo ( nombreGrupo , nombreMateria );\nasignarAula ( nombreAula , nombreGrupo );\nasignarMaestro ( nombreMaestro , nombreGrupo );\nasignarHora ( nombreGrupo , 12 );");
         codeArea1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 codeArea1KeyTyped(evt);
@@ -198,7 +198,7 @@ public class main extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 718, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,7 +218,7 @@ public class main extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 718, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,9 +246,9 @@ public class main extends javax.swing.JFrame {
         bodyLayout.setHorizontalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyLayout.createSequentialGroup()
-                .addComponent(jTabbedPane)
-                .addGap(18, 18, 18)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 727, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
         bodyLayout.setVerticalGroup(
@@ -285,9 +285,9 @@ public class main extends javax.swing.JFrame {
         footerLayout.setHorizontalGroup(
             footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(footerLayout.createSequentialGroup()
-                .addComponent(jScrollPane3)
-                .addGap(18, 18, 18)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
                 .addContainerGap())
         );
         footerLayout.setVerticalGroup(
@@ -375,8 +375,7 @@ public class main extends javax.swing.JFrame {
 
     private void btnCompilarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompilarActionPerformed
         // TODO add your handling code here:
-        obj.analizarLxL(automataArea,errorArea,codeArea1.getText());
-        JOptionPane.showMessageDialog(null,codeArea1.getText());
+        obj.analizarLxL(automataArea,errorArea,tokenArea,codeArea1.getText());
         
         
     }//GEN-LAST:event_btnCompilarActionPerformed
