@@ -2,6 +2,10 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JOptionPane;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.DefaultStyledDocument;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyleContext;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,12 +23,23 @@ public class main extends javax.swing.JFrame {
      */
     //Autómata
     validacionesAutomata obj;
+    
     public main() {
         initComponents();
         this.setExtendedState(main.MAXIMIZED_BOTH);
         Dimension dim = super.getToolkit().getScreenSize();
         this.setSize(dim);
         body.setSize(dim);
+        
+        final StyleContext cont = StyleContext.getDefaultStyleContext();
+        final AttributeSet red = cont.addAttribute(cont.getEmptySet(), StyleConstants.Foreground, Color.RED);// asignar
+        final AttributeSet Black = cont.addAttribute(cont.getEmptySet(), StyleConstants.Foreground, Color.BLACK);//resto
+        final AttributeSet blue = cont.addAttribute(cont.getEmptySet(), StyleConstants.Foreground, Color.blue);// consultas
+        final AttributeSet pink = cont.addAttribute(cont.getEmptySet(), StyleConstants.Foreground, Color.pink);//tipos de datos
+      
+        DefaultStyledDocument doc;
+        
+        
         
         TextLineNumber lineas1 = new TextLineNumber(codeArea1);
         lineas1.setCurrentLineForeground(Color.white);
